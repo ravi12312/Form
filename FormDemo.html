@@ -1,0 +1,62 @@
+<html>
+<head>
+<script type="text/javascript">
+
+function chkEmpty(){
+	var mob = /^[6-9]{1}[0-9]{9}$/;
+	var email=/[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$/;
+	var name=/^[A-Z]{1}[a-z]{3,10}$/;
+
+	if (document.frmReg.name.value == "") {alert("Please fill the Name");}
+	else if (name.test(document.frmReg.name.value) == false) { alert("Please enter valid Name");}
+	else if (document.frmReg.mobile.value == "") {alert("Please fill the Mobile No.");}
+	else if (mob.test(document.frmReg.mobile.value) == false) { alert("Please enter valid Contact no.");}
+	else if (document.frmReg.mail.value == ""){alert("Please fill the Email");}
+	else if (email.test(document.frmReg.mail.value) == false) { alert("Please enter valid Email Id.");}
+	
+	else if (document.frmReg.address.value == "") {alert("Please fill the Address");}
+	else {
+	           window.location="success.html";
+		}
+	}
+</script>
+</head>
+<body>
+<table align="center" background-color="cyan" >
+
+<center><h1 >HTML Form</h1></center>
+
+<form name="frmReg" >
+		<table border="2" align="center" cellpadding="10">
+		<tr>
+		<td>Enter Name : </td> <td> <input type="text" name="name" id="fname" size="10" pattern="^[A-Z]{1}[a-z]{3,10}$" 
+		title="Name should contain only alphabets, First letter capital"	/><br/> </td>
+</tr>	
+<tr>
+	<td>Enter Mobile number : </td><td><input type="text" name="mobile" size="10" pattern="[6789][0-9]{9}" 
+		title="Mobile number should have 10 digits"	 /><br/></td>
+		
+		</tr>
+		
+		<tr><td>Enter your Email :</td>
+	<td><input type="text" name="mail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"/>
+		<br/></td></tr>
+		<tr>
+		<td>Enter your  Gender  :</td>
+		<td><input type="radio" value="Male" name="male" >Male
+		<input type="radio" value="Female" name="female" checked>Female
+		<br/></td></tr>
+		<tr>
+	<tr><td>
+		Enter your address :</td>
+	<td>	<textarea rows="6" cols="30" name="address" ></textarea><br/>
+</td>
+</tr>
+<tr><td><input type="submit" value="Submit" class="btn" onclick="chkEmpty()"/></td>
+		<td><input type="reset" value="Cancel"/></td></tr>
+	</table>
+	</form>
+
+	</body>
+</html>
+
